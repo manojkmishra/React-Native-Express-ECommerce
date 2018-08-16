@@ -7,7 +7,7 @@ import { images } from '../constants/images';
 class SplashScreen extends Component 
 {   state={};
     componentDidMount() {   this.checkAuth();  }
-    checkAuth = () => {   // setTimeout(() => {  this.props.navigation.navigate('Auth');  }, 1000);    //check jwt token
+    checkAuth = () => {    setTimeout(() => {  this.props.navigation.navigate('Auth');  }, 1000);    //check jwt token
                      };
     render() 
     {   return (
@@ -19,8 +19,8 @@ class SplashScreen extends Component
             <Text size="2xl">Dowell
               <Text size="2xl" color="green"> Windows</Text>
             </Text> 
-            <Text size="sm" >Easy Window Shopping</Text>
-            </Box>
+          </Box>
+          <Text size="sm" >Easy Window Shopping</Text>
         </Box>
       );
     }

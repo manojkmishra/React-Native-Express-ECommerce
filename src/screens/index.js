@@ -1,7 +1,10 @@
 import { createStackNavigator, createSwitchNavigator, createBottomTabNavigator, } from 'react-navigation';
 import React, { Component } from 'react';
 
-const AuthNavigator = createStackNavigator({     Login: {  getScreen: () => require('./LoginScreen').default, },   });
+const AuthNavigator = createStackNavigator(
+   {     Login: {  getScreen: () => require('./LoginScreen').default, }, },
+   {     navigationOptions: { header: null, },} //headers for login screen
+  );
 const TabNavigator = createBottomTabNavigator({  Home: {  getScreen: () => require('./HomeScreen').default, },     });
 const MainNavigator = createStackNavigator({ Tab: TabNavigator,  });
 const AppNavigator = createSwitchNavigator(
