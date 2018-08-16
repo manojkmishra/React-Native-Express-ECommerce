@@ -16,7 +16,7 @@ const theme =
           font: null,
         },
   color,
-  space: { xs: 8, sm: 16, md: 24, lg: 36, xl: 40, },
+  space: { '2xs': 6, xs: 8, sm: 16, md: 24, lg: 36, xl: 40, },
   radius: { xs: 6, sm: 10, base: 14, lg: 20, xl: 30, },
   shadows: [ { shadowColor: color.black, shadowOffset: {  width: 0, height: 0,  }, shadowOpacity: 1,   shadowRadius: 1,   },
              { shadowColor: color.black, shadowOffset: { width: 0,  height: 0,  }, shadowOpacity: 0.6, shadowRadius: 5,  },

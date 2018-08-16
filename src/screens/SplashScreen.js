@@ -6,7 +6,7 @@ import OnboardingLogo from '../commons/OnboardingLogo';
 class SplashScreen extends Component 
 {   state={};
     componentDidMount() {   this.checkAuth();  }
-    checkAuth = () => {   // setTimeout(() => {  this.props.navigation.navigate('Auth');  }, 1000);    //check jwt token
+    checkAuth = () => {    setTimeout(() => {  this.props.navigation.navigate('Auth');  }, 1000);    //check jwt token
                      };
     render() 
     {   return (
