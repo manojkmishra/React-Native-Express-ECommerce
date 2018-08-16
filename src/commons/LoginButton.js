@@ -15,7 +15,7 @@ const bgColor = type =>
 
 
 const LoginButton = ({ children, type, onPress }) => (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress} >
            <Box dir="row" align="center" shadow={1} bg={bgColor(type)} w="80%" self="center" p="2xs" radius="xs" mb="sm">
                <Box mr="sm">
                  <Box bg="white" h={32} w={32} radius="xs" center>
