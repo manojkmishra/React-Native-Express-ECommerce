@@ -3,6 +3,7 @@ import { Box, Text } from 'react-native-design-utility';
 import { TouchableOpacity, Alert, Animated } from 'react-native';
 import OnboardingLogo from '../commons/OnboardingLogo';
 import LoginButton from '../commons/LoginButton';
+import { FacebookApi } from '../api/Facebook';
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
@@ -10,7 +11,13 @@ const BoxAnimated = Animated.createAnimatedComponent(Box);
 class LoginScreen extends Component 
 { state = {    };
   onGooglePress = async () => { Alert.alert('Google Pressed')   };
-  onFacebookPress = async () => { Alert.alert('Facebook Pressed')   };
+  onFacebookPress = async () => 
+  { // Alert.alert('Facebook Pressed')   
+      console.log('/loginscreen-facebook-pressed');
+    try {  const token = await FacebookApi.loginAsync();
+           console.log('/loginscreen-facebook-token=', token);
+        } catch (error) {  console.log('/loginscreen-error=', error); }
+  };
   
 
   state = {    opacity: new Animated.Value(0),    position: new Animated.Value(0),  };
