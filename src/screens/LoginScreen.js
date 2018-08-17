@@ -4,13 +4,20 @@ import { TouchableOpacity, Alert, Animated } from 'react-native';
 import OnboardingLogo from '../commons/OnboardingLogo';
 import LoginButton from '../commons/LoginButton';
 import { FacebookApi } from '../api/Facebook';
+import { GoogleApi } from '../api/Google';
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
 
 class LoginScreen extends Component 
 { state = {    };
-  onGooglePress = async () => { Alert.alert('Google Pressed')   };
+  onGooglePress = async () => 
+  { //Alert.alert('Google Pressed')  ;
+    console.log('/loginscreen-google-pressed'); 
+    try {      const token = await GoogleApi.loginAsync();
+              console.log('loginscreen/google-token', token);
+        } catch (error) {      console.log('loginscreen/google-error', error); }
+  };
   onFacebookPress = async () => 
   { // Alert.alert('Facebook Pressed')   
       console.log('/loginscreen-facebook-pressed');
