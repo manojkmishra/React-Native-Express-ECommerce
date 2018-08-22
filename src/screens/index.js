@@ -1,5 +1,6 @@
 import { createStackNavigator, createSwitchNavigator, createBottomTabNavigator, } from 'react-navigation';
 import React, { Component } from 'react';
+import { NavigationService } from '../api/NavigationService';
 
 const AuthNavigator = createStackNavigator(
    {     Login: {  getScreen: () => require('./LoginScreen').default, }, },
@@ -18,7 +19,10 @@ const AppNavigator = createSwitchNavigator(
   class Navigation extends Component 
   { state = {};
     render() {
-      return <AppNavigator />;
+      // return <AppNavigator />;
+      return(
+              <AppNavigator ref={r => NavigationService.setTopLevelNavigator(r)} />
+            );
     }
   }
   
