@@ -20,6 +20,7 @@ const AppNavigator = createSwitchNavigator(
   { state = {};
     render() {
       // return <AppNavigator />;
+      console.log('/screens/index.js-this.props',this.props);
       return(
               <AppNavigator ref={r => NavigationService.setTopLevelNavigator(r)} />
             );

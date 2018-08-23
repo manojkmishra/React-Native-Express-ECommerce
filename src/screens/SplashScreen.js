@@ -9,7 +9,8 @@ class SplashScreen extends Component
     checkAuth = () => {    setTimeout(() => {  this.props.navigation.navigate('Auth');  }, 1000);    //check jwt token
                      };
     render() 
-    {   return (
+    {     console.log('/SplashScreen-this.props',this.props);
+      return (
        <Box f={1} center>
          <OnboardingLogo />
        </Box>

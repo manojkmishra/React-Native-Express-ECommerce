@@ -9,7 +9,7 @@ const loginAsync = async () => {
      // iosClientId: Constants.manifest.extra.googleAppId.ios,
       scopes,
     });
-    console.log('api/googleapi/result=',result);
+    console.log('api/google.js--result=',result);
 
     if (result.type === 'success') {
       return Promise.resolve(result.accessToken);
