@@ -5,6 +5,8 @@ import { images } from './src/constants/images';
 import { cacheImages } from './src/utils/cacheImages';
 import { ActivityIndicator } from 'react-native';
 import {theme} from './src/constants/theme';
+import { Provider } from 'mobx-react/native';
+import { store } from './src/models';
 
 export default class App extends React.Component 
 { state = {    isReady: false, };
@@ -24,9 +26,11 @@ export default class App extends React.Component
         );
       }
      return (
+      <Provider {...store}>
       <UtilityThemeProvider theme={theme}>
         <Navigation/>
       </UtilityThemeProvider>
+      </Provider>
      );
   }
 }
