@@ -6,7 +6,12 @@ const AuthNavigator = createStackNavigator(
    {     Login: {  getScreen: () => require('./LoginScreen').default, }, },
    {     navigationOptions: { header: null, },} //headers for login screen
   );
-const TabNavigator = createBottomTabNavigator({  Home: {  getScreen: () => require('./HomeScreen').default, },     });
+const TabNavigator = createBottomTabNavigator(
+  {   Home: {  getScreen: () => require('./HomeScreen').default, },     
+      List: { getScreen: () => require('./ListScreen').default, },
+      Stores: { getScreen: () => require('./StoresScreen').default, },
+      Order: { getScreen: () => require('./OrderScreen').default,},
+  });
 const MainNavigator = createStackNavigator({ Tab: TabNavigator,  });
 const AppNavigator = createSwitchNavigator(
     { Splash: {  getScreen: () => require('./SplashScreen').default,  },
