@@ -14,7 +14,7 @@ const TabNavigator = createBottomTabNavigator(
       Stores: { getScreen: () => require('./StoresScreen').default, },
       Order: { getScreen: () => require('./OrderScreen').default,},
   },
- // {   tabBarComponent: props => <TabBar {...props} />,},
+  {   tabBarComponent: props => <TabBar {...props} />,},
 );
 const MainNavigator = createStackNavigator({ Tab: TabNavigator,  },
   {
