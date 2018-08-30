@@ -1,6 +1,8 @@
 import { createStackNavigator, createSwitchNavigator, createBottomTabNavigator, } from 'react-navigation';
 import React, { Component } from 'react';
 import { NavigationService } from '../api/NavigationService';
+import TabBar from '../components/TabBar';
+import {theme} from '../constants/theme';
 
 const AuthNavigator = createStackNavigator(
    {     Login: {  getScreen: () => require('./LoginScreen').default, }, },
@@ -11,8 +13,15 @@ const TabNavigator = createBottomTabNavigator(
       List: { getScreen: () => require('./ListScreen').default, },
       Stores: { getScreen: () => require('./StoresScreen').default, },
       Order: { getScreen: () => require('./OrderScreen').default,},
-  });
-const MainNavigator = createStackNavigator({ Tab: TabNavigator,  });
+  },
+ // {   tabBarComponent: props => <TabBar {...props} />,},
+);
+const MainNavigator = createStackNavigator({ Tab: TabNavigator,  },
+  {
+    navigationOptions: {  headerStyle:{backgroundColor: theme.color.green}    },
+},
+
+);
 const AppNavigator = createSwitchNavigator(
     { Splash: {  getScreen: () => require('./SplashScreen').default,  },
       Auth: AuthNavigator,
