@@ -17,9 +17,8 @@ const TabNavigator = createBottomTabNavigator(
   {   tabBarComponent: props => <TabBar {...props} />,},
 );
 const MainNavigator = createStackNavigator({ Tab: TabNavigator,  },
-  {
-    navigationOptions: {  headerStyle:{backgroundColor: theme.color.green}    },
-},
+   {   navigationOptions: {  headerStyle:{backgroundColor: theme.color.green}    },
+   },
 
 );
 const AppNavigator = createSwitchNavigator(
