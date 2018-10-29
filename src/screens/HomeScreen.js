@@ -3,7 +3,9 @@ import { Box, Text } from 'react-native-design-utility';
 import { StatusBar } from 'react-native';
 
 class HomeScreen extends Component 
-{   state={};
+{   static navigationOptions = {  title: 'HomeTitle',  };
+  
+    state={};
     render() 
     {    console.log('/HomeScreen-this.props',this.props);
       return (
