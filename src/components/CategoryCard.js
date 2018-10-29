@@ -4,10 +4,10 @@ import { Box, Text } from 'react-native-design-utility';
 class CategoryCard extends PureComponent {
   state = {};
   render() 
-  {    
+  { const {title}=this.props;   
     return (            
-          <Box >
-            <Text > CategoryCardComponent  </Text>
+          <Box w={1/3} bg="white" h={120} center>
+            <Text >{title}</Text>
           </Box>  
     );
   }

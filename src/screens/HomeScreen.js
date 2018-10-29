@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Box, Text } from 'react-native-design-utility';
 import { StatusBar, FlatList } from 'react-native';
 import CategoryCard from '../components/CategoryCard';
+import { theme } from '../constants/theme';
 
 const categories = [
   { id: 1, title: 'Grocery', image: require('../../assets/img/cart.png'), },
@@ -10,6 +11,7 @@ const categories = [
   { id: 4, title: 'video games',  },
 ];
 
+
 const NUM_COLUMNS = 3;
 
 class HomeScreen extends Component 
@@ -17,6 +19,22 @@ class HomeScreen extends Component
   
     state={};
     renderItem = ({ item }) => < CategoryCard {...item}/>
+  /*  renderItem = ({ item, index }) => 
+      { let style = {};
+        if (index % NUM_COLUMNS !== 0) 
+        { style.borderLeftWidth = 2;
+          style.borderLeftColor = theme.color.greyLighter;
+        }
+        return (
+          <Box w={1 / NUM_COLUMNS} bg="white" h={120} style={style}>
+            <CategoryCard {...item} />
+          </Box>
+        );
+    };
+    */
+    keyExtractor = item => String(item.id);
+   // separator = () => <Box h={2} bg="greyLighter" />;
+
     render() 
     {    console.log('/HomeScreen-this.props',this.props);
 
@@ -26,11 +44,13 @@ class HomeScreen extends Component
           <Box h={130} bg="red" w={1}>
             <Text>HomeScreen</Text>
           </Box>
-          <Box f={1} bg="blue" >
+          <Box f={1}  >
             <FlatList
               data={categories}
               renderItem={this.renderItem}
-            // numColumns={NUM_COLUMNS}
+              keyExtractor={this.keyExtractor}
+              numColumns={3}
+             // ItemSeparatorComponent={this.separator}
              />
           </Box>
          
